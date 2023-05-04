@@ -6,7 +6,6 @@ const Home = () => {
   return (
     <View className='flex-1 p-2'>
       <Products productsList={productsList} />
-
     </View>
   )
 }
