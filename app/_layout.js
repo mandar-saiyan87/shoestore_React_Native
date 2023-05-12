@@ -1,32 +1,47 @@
-import { Stack } from "expo-router";
-import { Fontisto } from '@expo/vector-icons';
-import { TouchableOpacity } from "react-native";
+import { Stack, useRouter } from "expo-router";
+import { FontAwesome5 } from '@expo/vector-icons';
+import { Pressable, Text, View } from "react-native";
+import { Provider } from "react-redux";
+import { store } from "../src/store/store";
+
 
 const StackLayout = () => {
-  return <Stack>
-    {/* <Stack.Screen name="index"
-      options={{
-        headerShadowVisible: false,
-        headerTitle: 'Filter by size',
-        headerTitleStyle: {
-          fontWeight: '100',
-          fontSize: 16,
-        },
-        headerTitleAlign: 'left',
-        headerLeft: () => (
-          <TouchableOpacity className='rotate-90 px-3 mr-2'>
-            <Fontisto name="equalizer" size={20} color="black" />
-          </TouchableOpacity>
-        )
-      }}
-    /> */}
-    <Stack.Screen name="index"
-      options={{
-        headerShadowVisible: false,
-        headerTitle: '',
-      }}
-    />
-  </Stack>
+
+  const router = useRouter();
+  return (
+    <Provider store={store}>
+    <Stack>
+      <Stack.Screen name="index"
+        options={{
+          headerShadowVisible: false,
+          headerTitle: 'Products',
+          headerRight: () => (
+            <Pressable className='px-3 active:opacity-30 items-center' onPress={() => router.push('cart')}>
+              <View className='flex-1 items-center justify-center bg-red-500 rounded-full px-1 -mb-1 self-end'>
+                <Text className='text-[10px] font-bold text-white'>1</Text>
+              </View>
+              <FontAwesome5 name="shopping-cart" size={20} color="gray" />
+            </Pressable>
+          )
+        }}
+      />
+      <Stack.Screen name="details"
+        options={{
+          presentation: 'modal',
+          animation: 'slide_from_bottom',
+          headerShadowVisible: false,
+          headerTitle: 'Product Details',
+        }}
+      />
+      <Stack.Screen name="cart"
+        options={{
+          headerShadowVisible: false,
+          headerTitle: 'Your Cart',
+        }}
+      />
+      </Stack>
+    </Provider>
+  )
 }
 
 export default StackLayout;

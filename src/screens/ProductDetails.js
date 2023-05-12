@@ -1,20 +1,21 @@
 import React from 'react';
 import { View, Text, Image, ScrollView, FlatList, Pressable } from 'react-native';
 import productsList from '../data/productsList';
+import ButtonComponent from '../components/ButtonComponent';
+import { useSelector } from 'react-redux';
 
 const ProductDetails = () => {
 
-  const product = productsList[0]
+  // const product = productsList[0]
 
-  const handlePress = () => {
-    console.warn('pressed')
-  }
+  const product = useSelector(state => state.products.selectProduct)
+
 
   return (
     <View>
-      <ScrollView className='relative'>
+      <ScrollView>
         {/* image Carousel */}
-        <FlatList
+        < FlatList
           data={product.images}
           renderItem={({ item }) => (
             <View className='w-screen px-3'>
@@ -38,15 +39,13 @@ const ProductDetails = () => {
 
         </View>
         {/* navigation icon */}
-      </ScrollView>
-      <Pressable className='fixed bottom-[10%] w-[75%] self-center bg-black py-3 rounded-full active:bg-slate-800'>
-        <Text className='text-center text-lg text-white tracking-wider'>Add to cart</Text>
-      </Pressable>
-    </View>
+      </ScrollView >
+      <ButtonComponent title={'Add to cart'}></ButtonComponent>
+    </View >
   )
 }
 
-export default ProductDetails
+export default ProductDetails;
 
 // < Pressable className = 'fixed bottom-[10%] w-[75%] bg-black py-3 rounded-full self-center' >
 //   <Text className='text-center text-lg text-white tracking-wider'>Add to cart</Text>
