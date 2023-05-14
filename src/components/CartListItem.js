@@ -36,7 +36,7 @@ const CartListItem = ({ cartProduct }) => {
       <View className='justify-evenly px-3'>
         <View>
           <Text className='font-medium text-base tracking-wide'>{cartProduct.product.name}</Text>
-          <Text>Size: {cartProduct.size}</Text>
+          <Text>Size: 42</Text>
         </View>
 
 

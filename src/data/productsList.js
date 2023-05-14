@@ -1,5 +1,6 @@
 export default productsList = [
   {
+
     id: "1",
     image: "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/nike/nike1.png",
     images: [
@@ -267,4 +268,7 @@ export default productsList = [
     ],
     description: "Inspired by the original that debuted in 1985, the Air Jordan 1 Low delivers a clean, classic look that's familiar yet fresh. With an iconic design that blends seamlessly with any fit, these shoes are perfect for taking charge.\n    \n    Advantages:\n    - Encapsulated Air-Sole unit for lightweight cushioning.\n    - Genuine leather on the upper for durability and a premium look.\n    - Solid rubber outsole for greater traction on different types of surfaces.\n    - Color Shown: Palomino/White/Wild Berry\n    - Model: 553558-215\n    - Proven efficacy\n    \n    A timeless rubber sole combines with a soft sockliner and encapsulated Nike Air cushioning for all-day comfort. The rubber outsole offers durable traction on a variety of surfaces."
   }
+
 ]
+
+
