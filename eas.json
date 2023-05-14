@@ -1,0 +1,18 @@
+{
+  "build": {
+    "shoestore": {
+      "android": {
+        "buildType": "apk"
+      }
+    },
+    "shoestore2": {
+      "android": {
+        "gradleCommand": ":app:assembleRelease"
+      }
+    },
+    "shoestore3": {
+      "developmentClient": true
+    },
+    "production": {}
+  }
+}

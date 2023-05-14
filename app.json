@@ -5,6 +5,14 @@
       "bundler": "metro"
     },
     "name": "shoestore",
-    "slug": "shoestore"
+    "slug": "shoestore",
+    "extra": {
+      "eas": {
+        "projectId": "0959cb5c-f5a4-426b-bc5d-f6eac700057e"
+      }
+    },
+    "android": {
+      "package": "com.mandar_desh87.shoestore"
+    }
   }
 }
