@@ -13,3 +13,6 @@ npx create-react-native-app -t with-router
 - [Expo Router: Docs](https://expo.github.io/router)
 - [Expo Router: Repo](https://github.com/expo/router)
 - [Request for Comments](https://github.com/expo/router/discussions/1)
+
+## APK link
+- https://expo.dev/artifacts/eas/bWEALRUhC6gQoZ1QJvjCT4.apk
