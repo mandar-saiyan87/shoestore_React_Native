@@ -5,7 +5,7 @@ import { useSelector} from 'react-redux';
 
 
 
-const Home = () => {
+const HomeScreen = () => {
 
   const productsList = useSelector(state => state.products.products)
 
@@ -16,4 +16,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default HomeScreen

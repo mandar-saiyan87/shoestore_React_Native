@@ -1,13 +1,20 @@
 import React from 'react'
 import { View } from 'react-native'
-import ProductCart from '../src/screens/ProductCart'
+import ProductCartScreen from '../src/screens/ProductCartScreen'
+import { Stack } from 'expo-router'
 
-const Cart = () => {
+const cart = () => {
   return (
     <View className='flex-1 bg-white'>
-      <ProductCart />
+      <Stack.Screen
+        options={{
+          headerShadowVisible: false,
+          headerTitle: 'Your Cart',
+        }}
+      />
+      <ProductCartScreen />
     </View>
   )
 }
 
-export default Cart
+export default cart

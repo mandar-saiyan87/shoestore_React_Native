@@ -2,13 +2,20 @@ import React from 'react';
 import { View, Text, Image, ScrollView, FlatList, Pressable } from 'react-native';
 import productsList from '../data/productsList';
 import ButtonComponent from '../components/ButtonComponent';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { cartSlice } from '../store/cartSlice'
 
-const ProductDetails = () => {
+const ProductDetailsScreen = () => {
 
   // const product = productsList[0]
 
   const product = useSelector(state => state.products.selectProduct)
+
+  const dispatch = useDispatch()
+
+  const addtoCart = () => {
+    dispatch(cartSlice.actions.addToCart({ product }))
+  }
 
 
   return (
@@ -40,12 +47,12 @@ const ProductDetails = () => {
         </View>
         {/* navigation icon */}
       </ScrollView >
-      <ButtonComponent title={'Add to cart'}></ButtonComponent>
+      <ButtonComponent title={'Add to cart'} action={addtoCart}></ButtonComponent>
     </View >
   )
 }
 
-export default ProductDetails;
+export default ProductDetailsScreen;
 
 // < Pressable className = 'fixed bottom-[10%] w-[75%] bg-black py-3 rounded-full self-center' >
 //   <Text className='text-center text-lg text-white tracking-wider'>Add to cart</Text>
